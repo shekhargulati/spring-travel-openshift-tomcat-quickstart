@@ -1,32 +1,27 @@
-tomcat6-example
+OpenShift Tomcat 7 Spring Application 
 ===============
 
-Sample application for Tomcat (EWS) cartridge
+Sample application for OpenShift Tomcat 7 cartridge
 
-Create a EWS/Tomcat app on OpenShift
+Create a Tomcat 7 app on OpenShift
 ----------------------------
 
 Create an account at http://openshift.redhat.com/ , don't forget to create a namespace and install client tools as well.
 
-Create a EWS/Tomcat application
+Create a Tomcat 7 application
 
-    rhc app create -a tomcat -t jbossews-1.0
+    rhc app-create travelapp tomcat-7 postgresql-9.2 
 
-Get your EWS/Tomcat running
+Get your Spring Travel app running
 ----------------------------
 
 Grab this quickstart codes and make it working for you!
 
-    cd tomcat
-    git remote add upstream -m master git://github.com/openshift/tomcat6-example.git
+    cd travelapp
+    git remote add upstream -m master https://github.com/shekhargulati/spring-travel-openshift-tomcat-quickstart.git
     git pull -s recursive -X theirs upstream master
     git push
 
-That's it, you can now checkout your Tomcat at:
+That's it, you can see the running application at:
 
-    http://tomcat-$yournamespace.rhcloud.com
-
-And a sample war has been deployed already:
-
-    http://tomcat-$yournamespace.rhcloud.com
-
+    http://travelapp-$yournamespace.rhcloud.com
